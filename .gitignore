@@ -6,6 +6,9 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 *.log
+*.tsbuildinfo
+/vite.config.js
+/vite.config.d.ts
 
 # Material bruto já incorporado ao site (ver public/images/) — mantido no disco, fora do histórico
 /Depoimentos/
