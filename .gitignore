@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+*.log
+
+# Material bruto já incorporado ao site (ver public/images/) — mantido no disco, fora do histórico
+/Depoimentos/
+/Logotipo Evolution.jpeg
+/Logotipo_Evolution-removebg-preview.png

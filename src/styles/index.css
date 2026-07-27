@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tokens espelhados em CSS para uso em gradientes e SVG inline */
+    --color-charcoal: #17140f;
+    --color-charcoal-soft: #221e17;
+    --color-gold: #b08d42;
+    --color-gold-bright: #d9b76a;
+    --color-cream: #f3eee3;
+    --color-wood: #3b2a1e;
+    --color-ink: #0f0d0a;
+  }
+
+  html {
+    /* Scroll suave é feito pelo Lenis (src/hooks/useLenis.ts); scroll-behavior nativo
+       fica de fora para não competir com a suavização dele. */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-charcoal font-sans text-cream antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Compensa o header fixo ao navegar por âncoras */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* Foco de teclado visível e dourado em toda a interface */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Remove o outline apenas para o mouse, preservando o de teclado */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-ink);
+  }
+
+  /* Corrige a aparência nativa dos selects em fundo escuro */
+  select option {
+    background-color: var(--color-charcoal-soft);
+    color: var(--color-cream);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold sm:text-xs;
+  }
+
+  .container-site {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Fio dourado que se dissolve nas pontas — usado como divisor secundário */
+  .hairline-gold {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(176, 141, 66, 0.45) 20%,
+      rgba(176, 141, 66, 0.45) 80%,
+      transparent
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
