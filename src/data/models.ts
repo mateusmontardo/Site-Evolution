@@ -1,9 +1,12 @@
 /**
- * As quatro especialidades, na ordem de prioridade comercial da empresa.
+ * Os três estilos construtivos da Evolution, na ordem de prioridade comercial.
  * A ordem deste array é a ordem exibida no site e no select do formulário.
+ *
+ * As fotos são de obras entregues — extraídas dos portfólios originais em PDF
+ * e otimizadas para web (ver public/images/projetos/).
  */
 
-export type ModelId = 'pre-fabricadas' | 'sob-projeto' | 'chales' | 'cabanas'
+export type ModelId = 'colonial' | 'contemporanea' | 'comercial'
 
 export interface Model {
   id: ModelId
@@ -12,59 +15,63 @@ export interface Model {
   formLabel: string
   eyebrow: string
   description: string
-  image: string
+  /** Galeria do card — o lead desliza entre as fotos sem sair da seção */
+  images: string[]
   imageAlt: string
   highlights: string[]
 }
 
 export const models: Model[] = [
   {
-    id: 'pre-fabricadas',
-    name: 'Casas pré-fabricadas',
-    formLabel: 'Casa pré-fabricada',
-    eyebrow: 'Prazo definido',
+    id: 'colonial',
+    name: 'Estilo Colonial',
+    formLabel: 'Casa estilo colonial',
+    eyebrow: 'Tradição',
     description:
-      'Estrutura produzida em ambiente controlado e montada no terreno com precisão milimétrica. Prazo curto, sem abrir mão do acabamento.',
-    // TODO: substituir por foto real de uma casa pré-fabricada entregue
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Casas+pr%C3%A9-fabricadas',
-    imageAlt: 'Casa de madeira pré-fabricada da Evolution vista da fachada frontal',
-    highlights: ['Montagem rápida', 'Projeto validado', 'Custo previsível'],
+      'Telhado de barro em águas largas, varandas profundas e madeira aparente. O desenho clássico que envelhece bem e nunca sai de moda.',
+    images: [
+      '/images/projetos/colonial-01.jpg',
+      '/images/projetos/colonial-02.jpg',
+      '/images/projetos/colonial-03.jpg',
+      '/images/projetos/colonial-04.jpg',
+      '/images/projetos/colonial-05.jpg',
+    ],
+    imageAlt: 'Casa de madeira em estilo colonial construída pela Evolution',
+    highlights: ['Varandas amplas', 'Telha cerâmica', 'Madeira aparente'],
   },
   {
-    id: 'sob-projeto',
-    name: 'Casas de madeira',
-    formLabel: 'Casa de madeira sob projeto',
-    eyebrow: 'Sob medida',
+    id: 'contemporanea',
+    name: 'Estilo Contemporâneo',
+    formLabel: 'Casa estilo contemporâneo',
+    eyebrow: 'Assinatura',
     description:
-      'Residências desenhadas do zero, a partir do terreno, da luz e da rotina de quem vai morar. Cada peça de madeira tem destino definido em projeto.',
-    // TODO: substituir por foto real de uma residência construída sob projeto
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Casas+de+madeira',
-    imageAlt: 'Residência de madeira construída sob projeto exclusivo pela Evolution',
-    highlights: ['Projeto exclusivo', 'Madeira nobre', 'Acompanhamento de obra'],
+      'Linhas retas, planos inclinados e grandes panos de vidro. Madeira combinada a pedra e concreto para quem quer arquitetura autoral.',
+    images: [
+      '/images/projetos/contemporanea-01.jpg',
+      '/images/projetos/contemporanea-02.jpg',
+      '/images/projetos/contemporanea-03.jpg',
+      '/images/projetos/contemporanea-04.jpg',
+      '/images/projetos/contemporanea-05.jpg',
+    ],
+    imageAlt: 'Casa de madeira em estilo contemporâneo construída pela Evolution',
+    highlights: ['Vãos envidraçados', 'Volumes marcados', 'Projeto autoral'],
   },
   {
-    id: 'chales',
-    name: 'Chalés',
-    formLabel: 'Chalé',
-    eyebrow: 'Serra e campo',
+    id: 'comercial',
+    name: 'Estilo Comercial',
+    formLabel: 'Construção comercial',
+    eyebrow: 'Negócios',
     description:
-      'Volumes compactos de linhas inclinadas, pensados para terrenos de encosta e para quem busca refúgio ou renda com hospedagem.',
-    // TODO: substituir por foto real de um chalé entregue
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Chal%C3%A9s',
-    imageAlt: 'Chalé de madeira da Evolution em terreno de encosta ao entardecer',
-    highlights: ['Ideal para hospedagem', 'Implantação em declive', 'Isolamento térmico'],
-  },
-  {
-    id: 'cabanas',
-    name: 'Cabanas',
-    formLabel: 'Cabana',
-    eyebrow: 'Refúgio',
-    description:
-      'Espaços enxutos e bem resolvidos, do estúdio de campo à unidade de pousada. Menos área, mesma exigência de acabamento.',
-    // TODO: substituir por foto real de uma cabana entregue
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Cabanas',
-    imageAlt: 'Cabana de madeira da Evolution cercada por vegetação nativa',
-    highlights: ['Área otimizada', 'Entrega ágil', 'Baixa manutenção'],
+      'Pontos de venda, escritórios e estruturas de apoio em madeira. Montagem rápida, presença marcante e o mesmo padrão de acabamento.',
+    images: [
+      '/images/projetos/comercial-01.jpg',
+      '/images/projetos/comercial-02.jpg',
+      '/images/projetos/comercial-03.jpg',
+      '/images/projetos/comercial-04.jpg',
+      '/images/projetos/comercial-05.jpg',
+    ],
+    imageAlt: 'Construção comercial em madeira executada pela Evolution',
+    highlights: ['Obra rápida', 'Uso comercial', 'Baixa manutenção'],
   },
 ]
 

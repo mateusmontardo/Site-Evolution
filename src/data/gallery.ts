@@ -1,57 +1,105 @@
+import type { ModelId } from './models'
+
 export interface GalleryItem {
-  title: string
-  location: string
+  /** Estilo construtivo — é o único rótulo exibido sobre a foto */
+  style: string
+  styleId: ModelId
   image: string
   alt: string
-  /** Controla o peso do item dentro do grid (itens 'wide' e 'tall' quebram a monotonia) */
-  span: 'wide' | 'tall' | 'default'
+  /** Peso do item no grid: 'feature' 2x2, 'wide' 2x1, 'default' 1x1 */
+  span: 'feature' | 'wide' | 'default'
 }
 
 /**
- * TODO: substituir todos os placeholders por fotografia profissional das obras entregues.
- * Recomendação: fotos ao entardecer ou à noite com luz interna acesa — reforçam o dourado da paleta.
+ * Obras entregues pela Evolution. As fotos vieram dos portfólios originais
+ * em PDF (uma página por obra, com duas fotos cada) e de registros de campo;
+ * foram recortadas, convertidas e otimizadas para web.
+ *
+ * A ordem intercala os três estilos para o grid não ficar em blocos monótonos.
  */
 export const galleryItems: GalleryItem[] = [
   {
-    title: 'Residência Vale do Camaquã',
-    location: 'Caçapava do Sul, RS',
-    image: 'https://placehold.co/1600x1000/17140F/B08D42?text=Resid%C3%AAncia+Vale+do+Camaqu%C3%A3',
-    alt: 'Fachada de residência de madeira ao entardecer com luz interna acesa',
-    span: 'wide',
+    style: 'Estilo Contemporâneo',
+    styleId: 'contemporanea',
+    image: '/images/projetos/contemporanea-06.jpg',
+    alt: 'Residência contemporânea em madeira com plano de telhado inclinado e amplos vidros',
+    span: 'feature',
   },
   {
-    title: 'Chalé Serra Azul',
-    location: 'São Francisco de Paula, RS',
-    image: 'https://placehold.co/900x1200/17140F/B08D42?text=Chal%C3%A9+Serra+Azul',
-    alt: 'Chalé de madeira de duas águas implantado em terreno inclinado',
-    span: 'tall',
-  },
-  {
-    title: 'Cabana Coxilha',
-    location: 'Bagé, RS',
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Cabana+Coxilha',
-    alt: 'Cabana de madeira compacta com varanda coberta',
+    style: 'Estilo Colonial',
+    styleId: 'colonial',
+    image: '/images/projetos/colonial-06.jpg',
+    alt: 'Casa colonial em madeira com telhado cerâmico e varanda em toda a fachada',
     span: 'default',
   },
   {
-    title: 'Casa Fronteira',
-    location: 'Rivera, Uruguai',
-    image: 'https://placehold.co/1200x900/17140F/B08D42?text=Casa+Fronteira',
-    alt: 'Casa de madeira pré-fabricada de dois pavimentos com deck frontal',
+    style: 'Estilo Comercial',
+    styleId: 'comercial',
+    image: '/images/projetos/comercial-03.jpg',
+    alt: 'Estrutura comercial em madeira com fachada envidraçada e cobertura em beiral',
     span: 'default',
   },
   {
-    title: 'Pousada Pedra Alta',
-    location: 'Canela, RS',
-    image: 'https://placehold.co/1600x1000/17140F/B08D42?text=Pousada+Pedra+Alta',
-    alt: 'Conjunto de chalés de madeira de uma pousada vistos de cima',
+    style: 'Estilo Colonial',
+    styleId: 'colonial',
+    image: '/images/projetos/colonial-07.jpg',
+    alt: 'Residência colonial em madeira com alvenaria aparente e telhado de barro',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Contemporâneo',
+    styleId: 'contemporanea',
+    image: '/images/projetos/contemporanea-07.jpg',
+    alt: 'Casa contemporânea em madeira com varanda e rede sob o beiral',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Contemporâneo',
+    styleId: 'contemporanea',
+    image: '/images/projetos/contemporanea-09.jpg',
+    alt: 'Sobrado contemporâneo em madeira com sacada e estrutura metálica',
     span: 'wide',
   },
   {
-    title: 'Refúgio Santa Tecla',
-    location: 'Bagé, RS',
-    image: 'https://placehold.co/900x1200/17140F/B08D42?text=Ref%C3%BAgio+Santa+Tecla',
-    alt: 'Detalhe de estrutura de madeira aparente em ambiente interno',
-    span: 'tall',
+    style: 'Estilo Comercial',
+    styleId: 'comercial',
+    image: '/images/projetos/comercial-05.jpg',
+    alt: 'Ponto comercial em madeira com varanda coberta e acesso frontal',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Colonial',
+    styleId: 'colonial',
+    image: '/images/projetos/colonial-08.jpg',
+    alt: 'Casa colonial em madeira com base em alvenaria e telhado de duas águas',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Colonial',
+    styleId: 'colonial',
+    image: '/images/projetos/colonial-09.jpg',
+    alt: 'Residência colonial em madeira com varanda ampla sobre pilares',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Contemporâneo',
+    styleId: 'contemporanea',
+    image: '/images/projetos/contemporanea-08.jpg',
+    alt: 'Casa contemporânea em madeira com jardim e escada de acesso',
+    span: 'default',
+  },
+  {
+    style: 'Estilo Comercial',
+    styleId: 'comercial',
+    image: '/images/projetos/comercial-04.jpg',
+    alt: 'Construção comercial em madeira com fachada envidraçada entre árvores',
+    span: 'wide',
+  },
+  {
+    style: 'Estilo Colonial',
+    styleId: 'colonial',
+    image: '/images/projetos/colonial-10.jpg',
+    alt: 'Casa colonial em madeira com varanda lateral e telhado cerâmico',
+    span: 'default',
   },
 ]

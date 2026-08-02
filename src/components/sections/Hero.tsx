@@ -67,9 +67,8 @@ export function Hero() {
           className="mt-8 max-w-xl text-base leading-relaxed text-cream/75 sm:text-lg"
           {...fadeUp(0.32)}
         >
-          Casas pré-fabricadas, residências sob projeto, chalés e cabanas em madeira nobre —
-          desenhados sob medida e executados por equipe própria em Bagé, em todo o Rio Grande do Sul
-          e no Uruguai.
+          Casas em estilo colonial, contemporâneo e comercial, em madeira nobre — desenhadas sob
+          medida e executadas por equipe própria em Bagé, em todo o Rio Grande do Sul e no Uruguai.
         </motion.p>
 
         <motion.div className="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center" {...fadeUp(0.44)}>
@@ -96,7 +95,7 @@ export function Hero() {
           {[
             { value: `${yearsInBusiness} anos`, label: 'de mercado' },
             { value: '2 países', label: 'Brasil e Uruguai' },
-            { value: '4 linhas', label: 'de construção em madeira' },
+            { value: '3 estilos', label: 'de construção em madeira' },
           ].map((item) => (
             <div key={item.label}>
               <dt className="font-display text-2xl font-light text-gold-bright sm:text-3xl">

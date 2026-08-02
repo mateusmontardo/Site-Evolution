@@ -81,9 +81,9 @@ export function About() {
               </Reveal>
               <Reveal delay={0.26}>
                 <p>
-                  São quatro linhas de construção — casas pré-fabricadas, residências sob projeto,
-                  chalés e cabanas —, todas partindo do mesmo princípio: nenhuma casa é entregue
-                  antes de estar do jeito que foi prometida.
+                  São três estilos construtivos — colonial, contemporâneo e comercial —, todos
+                  partindo do mesmo princípio: nenhuma obra é entregue antes de estar do jeito que
+                  foi prometida.
                 </p>
               </Reveal>
             </div>

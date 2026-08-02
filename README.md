@@ -22,26 +22,43 @@ src/
     sections/   Hero, About, Models, Differentials, Gallery,
                 Testimonials, Coverage, Contact
     ui/         Button, Reveal, SectionHeading, SectionDivider,
-                TreeRingMotif, ModelIcons
+                TreeRingMotif, ModelIcons, PhotoCarousel,
+                ImageLightbox, VideoModal
   data/         site.ts, models.ts, differentials.ts,
-                testimonials.ts, gallery.ts
-  hooks/        useScrollHeader, useActiveSection
+                testimonials.ts, videoTestimonials.ts, gallery.ts
+  hooks/        useScrollHeader, useActiveSection, useLenis,
+                useLockBodyScroll
+  lib/          lenis.ts (instância compartilhada do scroll suave)
   styles/       index.css (tokens + camadas Tailwind)
+public/
+  images/projetos/   fotos de obras por estilo (colonial/contemporanea/comercial)
+  images/testimonials/ capas dos depoimentos em vídeo
+  videos/            vídeo de fundo do Hero
 ```
 
-Todo o conteúdo editável (textos de modelos, depoimentos, diferenciais, dados de
+Todo o conteúdo editável (estilos construtivos, depoimentos, diferenciais, dados de
 contato) vive em `src/data/` — não é preciso mexer nos componentes para atualizar copy.
+
+### Estilos construtivos
+
+`src/data/models.ts` define os três estilos (colonial, contemporâneo, comercial) e as
+fotos de cada carrossel. A ordem do array é a ordem exibida na seção Especialidades e
+no `<select>` do formulário de contato. `src/data/gallery.ts` monta a grade da seção
+Projetos — o campo `span` controla o peso de cada foto no grid (`feature` 2x2,
+`wide` 2x1, `default` 1x1).
+
+As fotos vieram dos portfólios originais em PDF: cada página trazia o logo e duas fotos
+sobre fundo branco, então foram renderizadas, recortadas e convertidas para JPEG
+otimizado (1200px, qualidade 80).
 
 ## Pendências antes de publicar
 
-1. **Dados reais de contato** — `src/data/site.ts`: telefone/WhatsApp, e-mail, endereço,
-   redes sociais. Os mesmos dados aparecem no JSON-LD do `index.html`.
-2. **Fotografia** — todas as imagens são placeholders. Procure por `TODO` em
-   `src/data/models.ts`, `src/data/gallery.ts`, `src/components/sections/Hero.tsx`
-   e no `index.html` (imagem Open Graph).
-3. **Depoimentos** — `src/data/testimonials.ts` traz textos representativos;
-   substituir por depoimentos reais com autorização por escrito.
-4. **Backend do formulário** — hoje o envio monta a mensagem e abre o WhatsApp.
+1. **E-mail oficial** — `src/data/site.ts` ainda usa um endereço provisório
+   (`contato@evolutioncasasdemadeira.com.br`). O mesmo valor aparece no JSON-LD do
+   `index.html`.
+2. **Imagem Open Graph** — `index.html` ainda aponta para um placeholder; trocar por
+   uma foto real 1200x630 de obra entregue.
+3. **Backend do formulário** — hoje o envio monta a mensagem e abre o WhatsApp.
    O ponto de integração está comentado em
    `src/components/sections/Contact.tsx`, na função `onSubmit`.
-5. **Domínio** — atualizar as URLs canônica/Open Graph no `index.html`.
+4. **Domínio** — atualizar as URLs canônica/Open Graph no `index.html`.

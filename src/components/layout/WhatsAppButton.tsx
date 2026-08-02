@@ -21,7 +21,7 @@ export function WhatsAppButton() {
       {visible && (
         <motion.a
           href={whatsappLink(
-            'Olá! Vim pelo site da Evolution e gostaria de saber mais sobre casas, chalés e cabanas de madeira.',
+            'Olá! Vim pelo site da Evolution e gostaria de saber mais sobre as casas de madeira.',
           )}
           target="_blank"
           rel="noopener noreferrer"
