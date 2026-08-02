@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '../ui/Button'
@@ -5,6 +6,20 @@ import { site, whatsappLink, yearsInBusiness } from '../../data/site'
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion()
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Alguns navegadores (Safari/iOS em especial) ignoram o autoplay se a propriedade
+  // `muted` do elemento não estiver setada de fato no momento da tentativa — o
+  // atributo declarativo no JSX às vezes chega tarde demais na hidratação do React.
+  // Setar via ref e chamar play() explicitamente cobre esse caso.
+  useEffect(() => {
+    if (shouldReduceMotion) return
+    const video = videoRef.current
+    if (!video) return
+    video.muted = true
+    const playPromise = video.play()
+    if (playPromise) playPromise.catch(() => {})
+  }, [shouldReduceMotion])
 
   const fadeUp = (delay: number) => ({
     initial: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 28 },
@@ -30,11 +45,18 @@ export function Hero() {
         />
       ) : (
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          ref={videoRef}
+          // object-position desloca o corte para a esquerda no mobile: o vídeo é
+          // 16:9 e a tela vertical do celular fica muito mais estreita que alta,
+          // então o object-cover precisa descartar boa parte da largura — a fachada
+          // e a placa da casa ficam melhor enquadradas puxando o foco para a
+          // esquerda do que no centro puro (padrão usado no desktop).
+          className="absolute inset-0 h-full w-full object-cover object-[30%_center] sm:object-center"
           autoPlay
           muted
           loop
           playsInline
+          webkit-playsinline="true"
           preload="auto"
           poster="https://placehold.co/2400x1600/17140F/3B2A1E?text=+"
           aria-hidden="true"
