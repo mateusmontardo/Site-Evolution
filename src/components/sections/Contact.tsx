@@ -7,6 +7,7 @@ import { Reveal } from '../ui/Reveal'
 import { TreeRingMotif } from '../ui/TreeRingMotif'
 import { models, type ModelId } from '../../data/models'
 import { site, whatsappLink } from '../../data/site'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 const contactSchema = z.object({
   name: z.string().trim().min(3, 'Informe seu nome completo.'),
@@ -70,6 +71,7 @@ export function Contact({ presetInterest }: ContactProps) {
       `Mensagem: ${data.message}`,
     ].join('\n')
 
+    trackWhatsAppClick('contact_form')
     window.open(whatsappLink(text), '_blank', 'noopener,noreferrer')
   }
 
@@ -80,6 +82,7 @@ export function Contact({ presetInterest }: ContactProps) {
       value: site.whatsappDisplay,
       href: whatsappLink(),
       external: true,
+      onClick: () => trackWhatsAppClick('contact_info'),
     },
     {
       icon: Mail,
@@ -87,6 +90,7 @@ export function Contact({ presetInterest }: ContactProps) {
       value: site.email,
       href: `mailto:${site.email}`,
       external: false,
+      onClick: undefined,
     },
   ]
 
@@ -125,6 +129,7 @@ export function Contact({ presetInterest }: ContactProps) {
                   <Reveal key={channel.label} delay={0.1 + index * 0.06}>
                     <a
                       href={channel.href}
+                      onClick={channel.onClick}
                       {...(channel.external
                         ? { target: '_blank', rel: 'noopener noreferrer' }
                         : {})}

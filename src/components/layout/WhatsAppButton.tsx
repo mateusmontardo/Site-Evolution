@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { whatsappLink } from '../../data/site'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 /**
  * Botão flutuante de WhatsApp — aparece após o usuário sair do hero,
@@ -26,6 +27,7 @@ export function WhatsAppButton() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar com a Evolution no WhatsApp"
+          onClick={() => trackWhatsAppClick('floating_button')}
           initial={{ opacity: 0, scale: 0.85, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.85, y: 12 }}

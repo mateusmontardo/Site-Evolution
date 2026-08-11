@@ -6,6 +6,7 @@ import { navLinks, whatsappLink } from '../../data/site'
 import { useScrollHeader } from '../../hooks/useScrollHeader'
 import { useActiveSection } from '../../hooks/useActiveSection'
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 const sectionIds = navLinks.map((link) => link.href.slice(1))
 
@@ -86,6 +87,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex"
+              onClick={() => trackWhatsAppClick('header')}
             >
               Falar no WhatsApp
             </Button>
@@ -134,7 +136,10 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    trackWhatsAppClick('header_mobile')
+                    setMenuOpen(false)
+                  }}
                 >
                   Falar no WhatsApp
                 </Button>

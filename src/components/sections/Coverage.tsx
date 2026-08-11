@@ -1,6 +1,7 @@
 import { Reveal } from '../ui/Reveal'
 import { Button } from '../ui/Button'
 import { whatsappLink } from '../../data/site'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 const areas = [
   {
@@ -50,6 +51,7 @@ export function Coverage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
+                  onClick={() => trackWhatsAppClick('coverage')}
                 >
                   Consultar atendimento na minha região
                 </Button>

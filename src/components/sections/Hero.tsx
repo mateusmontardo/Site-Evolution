@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { site, whatsappLink, yearsInBusiness } from '../../data/site'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion()
@@ -101,6 +102,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
+            onClick={() => trackWhatsAppClick('hero')}
           >
             Agende uma conversa
           </Button>

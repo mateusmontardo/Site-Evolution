@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 import { navLinks, site, whatsappLink } from '../../data/site'
 import { models } from '../../data/models'
+import { trackWhatsAppClick } from '../../lib/analytics'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -88,6 +89,7 @@ export function Footer() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('footer')}
                   className="flex items-start gap-3 transition-colors duration-300 hover:text-gold-bright"
                 >
                   <Phone size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
