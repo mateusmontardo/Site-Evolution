@@ -13,13 +13,13 @@ export interface VideoTestimonial {
  */
 export const videoTestimonials: VideoTestimonial[] = [
   {
-    youtubeId: 'dHoAw9NDnI4',
+    youtubeId: 'KCgD4mr7psg',
     clientName: 'Andrea Gallina',
     thumbnail: '/images/testimonials/andrea-gallina.jpg',
     thumbnailAlt: 'Andrea Gallina, cliente da Evolution, gravando depoimento em vídeo',
   },
   {
-    youtubeId: 'Icx9b5KPoFM',
+    youtubeId: 'IsXoo8jaPbg',
     clientName: 'Valdir Trapp',
     thumbnail: '/images/testimonials/valdir-trapp.jpg',
     thumbnailAlt: 'Valdir Trapp, cliente da Evolution, gravando depoimento em vídeo',

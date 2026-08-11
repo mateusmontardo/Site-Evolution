@@ -30,9 +30,9 @@ export const models: Model[] = [
     description:
       'Telhado de barro em águas largas, varandas profundas e madeira aparente. O desenho clássico que envelhece bem e nunca sai de moda.',
     images: [
-      '/images/projetos/colonial-01.jpg',
       '/images/projetos/colonial-02.jpg',
       '/images/projetos/colonial-03.jpg',
+      '/images/projetos/colonial-01.jpg',
       '/images/projetos/colonial-04.jpg',
       '/images/projetos/colonial-05.jpg',
     ],
