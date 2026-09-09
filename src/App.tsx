@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer'
 import { WhatsAppButton } from './components/layout/WhatsAppButton'
 import { Hero } from './components/sections/Hero'
 import { About } from './components/sections/About'
+import { Prefabricadas } from './components/sections/Prefabricadas'
 import { Models } from './components/sections/Models'
 import { Differentials } from './components/sections/Differentials'
 import { Gallery } from './components/sections/Gallery'
@@ -49,6 +50,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Prefabricadas />
         <SectionDivider className="bg-charcoal-soft" />
         <Models onSelectModel={handleSelectModel} />
         <Differentials />
