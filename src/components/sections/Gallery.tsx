@@ -28,8 +28,17 @@ export function Gallery() {
   const [filter, setFilter] = useState<Filter>('todos')
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
+  /**
+   * "Todos" mostra só a curadoria (fotos mais bonitas e representativas de cada
+   * estilo, marcadas com `featured`); filtrar por um estilo específico mostra
+   * a obra completa daquele estilo, para o lead ver com exatidão o que a
+   * Evolution já entregou.
+   */
   const visibleItems = useMemo(
-    () => (filter === 'todos' ? galleryItems : galleryItems.filter((i) => i.styleId === filter)),
+    () =>
+      filter === 'todos'
+        ? galleryItems.filter((i) => i.featured)
+        : galleryItems.filter((i) => i.styleId === filter),
     [filter],
   )
 

@@ -2,6 +2,9 @@ import { useCallback, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
+/** Acima disso, o indicador vira contador numérico em vez de uma bolinha por foto */
+const DOT_LIMIT = 10
+
 interface PhotoCarouselProps {
   images: string[]
   alt: string
@@ -84,23 +87,33 @@ export function PhotoCarousel({
           <CarouselArrow side="left" onClick={() => paginate(-1)} />
           <CarouselArrow side="right" onClick={() => paginate(1)} />
 
-          {/* Indicadores */}
-          <div className="absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-2">
-            {images.map((image, dot) => (
-              <button
-                key={image}
-                type="button"
-                onClick={() => goTo(dot)}
-                aria-label={`Ver foto ${dot + 1} de ${total}`}
-                aria-current={dot === index}
-                className={`h-1.5 rounded-full transition-all duration-300 ease-soft ${
-                  dot === index
-                    ? 'w-6 bg-gold-bright'
-                    : 'w-1.5 bg-cream/45 hover:bg-cream/80'
-                }`}
-              />
-            ))}
-          </div>
+          {/* Indicadores: bolinhas até um total pequeno. Galerias grandes (estilos com
+              muitas fotos de obra) usam um contador numérico — uma bolinha por foto
+              não cabe nem se lê a partir de ~12 imagens. */}
+          {total <= DOT_LIMIT ? (
+            <div className="absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-2">
+              {images.map((image, dot) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => goTo(dot)}
+                  aria-label={`Ver foto ${dot + 1} de ${total}`}
+                  aria-current={dot === index}
+                  className={`h-1.5 rounded-full transition-all duration-300 ease-soft ${
+                    dot === index
+                      ? 'w-6 bg-gold-bright'
+                      : 'w-1.5 bg-cream/45 hover:bg-cream/80'
+                  }`}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="absolute inset-x-0 bottom-4 z-10 flex items-center justify-center">
+              <span className="border border-gold/30 bg-charcoal/70 px-3 py-1 text-xs tabular-nums tracking-[0.08em] text-cream/85 backdrop-blur-sm">
+                {index + 1} / {total}
+              </span>
+            </div>
+          )}
         </>
       )}
     </div>
