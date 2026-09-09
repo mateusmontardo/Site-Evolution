@@ -17,9 +17,9 @@ export interface Differential {
 export const differentials: Differential[] = [
   {
     icon: Compass,
-    title: 'Uma década de obra entregue',
+    title: 'Quatro décadas de experiência em madeira',
     description:
-      'Dez anos de projetos executados no Rio Grande do Sul — histórico verificável, não promessa.',
+      'Décadas dedicadas ao ofício, antes mesmo da Evolution existir — o mesmo rigor em cada obra entregue no Rio Grande do Sul e no Uruguai.',
   },
   {
     icon: Globe2,
@@ -29,9 +29,9 @@ export const differentials: Differential[] = [
   },
   {
     icon: TreePine,
-    title: 'Madeira de origem certificada',
+    title: 'Madeira selecionada com rigor',
     description:
-      'Seleção de peças de reflorestamento com rastreabilidade, tratamento autoclave e secagem controlada.',
+      'Cada peça é escolhida a olho e ao toque, sem atalho de fornecedor genérico — critério que se repete em toda obra, do início ao acabamento.',
   },
   {
     icon: Ruler,

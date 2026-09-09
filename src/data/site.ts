@@ -28,8 +28,13 @@ export const site = {
   },
 } as const
 
-/** Anos completos de atuação, calculados a partir do ano de fundação. */
-export const yearsInBusiness = new Date().getFullYear() - site.foundedYear
+/**
+ * Anos de experiência da liderança da Evolution em construção de casas de
+ * madeira — anteriores à fundação da marca em {@link site.foundedYear}, por
+ * isso é um número fixo, não calculado a partir do ano de fundação.
+ * TODO: atualizar manualmente a cada ano (valor informado em 2026).
+ */
+export const founderExperienceYears = 40
 
 export const navLinks = [
   { label: 'Início', href: '#inicio' },

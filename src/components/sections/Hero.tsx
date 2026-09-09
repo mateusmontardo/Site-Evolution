@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '../ui/Button'
-import { site, whatsappLink, yearsInBusiness } from '../../data/site'
+import { founderExperienceYears, whatsappLink } from '../../data/site'
 import { trackWhatsAppClick } from '../../lib/analytics'
 
 export function Hero() {
@@ -74,14 +74,14 @@ export function Hero() {
 
       <div className="container-site relative z-10 pb-20 pt-32 sm:pb-24 lg:pb-28">
         <motion.p className="eyebrow" {...fadeUp(0.1)}>
-          Desde {site.foundedYear} · {site.city}, {site.state}
+          {founderExperienceYears} anos de experiência · Rio Grande do Sul e Uruguai
         </motion.p>
 
         <motion.h1
           className="mt-7 max-w-4xl font-display text-[2.6rem] font-light leading-[1.06] tracking-tight text-cream sm:text-6xl lg:text-[4.6rem]"
           {...fadeUp(0.2)}
         >
-          Uma década construindo
+          Quatro décadas construindo
           <br />
           <span className="text-gold-bright">sonhos em madeira</span>.
         </motion.h1>
@@ -117,7 +117,7 @@ export function Hero() {
           {...fadeUp(0.56)}
         >
           {[
-            { value: `${yearsInBusiness} anos`, label: 'de mercado' },
+            { value: `${founderExperienceYears} anos`, label: 'de experiência' },
             { value: '2 países', label: 'Brasil e Uruguai' },
             { value: '3 estilos', label: 'de construção em madeira' },
           ].map((item) => (

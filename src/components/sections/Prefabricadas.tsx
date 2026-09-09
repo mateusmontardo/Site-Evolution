@@ -2,7 +2,7 @@ import { ClipboardList, Hammer, Layers, PackageCheck, type LucideIcon } from 'lu
 import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
-import { whatsappLink, yearsInBusiness } from '../../data/site'
+import { founderExperienceYears, whatsappLink } from '../../data/site'
 import { trackWhatsAppClick } from '../../lib/analytics'
 
 const steps: { icon: LucideIcon; step: string; title: string; description: string }[] = [
@@ -15,8 +15,8 @@ const steps: { icon: LucideIcon; step: string; title: string; description: strin
   {
     icon: Layers,
     step: 'Etapa 2',
-    title: 'Corte e tratamento',
-    description: 'Autoclave e secagem controlada em galpão próprio.',
+    title: 'Corte e preparo',
+    description: 'Cada peça é selecionada e cortada com precisão antes da montagem.',
   },
   {
     icon: Hammer,
@@ -48,8 +48,8 @@ export function Prefabricadas() {
           description={
             <>
               No Brasil, o termo carrega fama de solução provisória. Na Evolution significa o
-              oposto: madeira cortada, tratada e numerada em galpão próprio antes de chegar ao
-              terreno — precisão que reduz o prazo de obra sem abrir mão da resistência
+              oposto: projeto sob medida e execução criteriosa, do corte da madeira ao último
+              detalhe — precisão que reduz o prazo de obra sem abrir mão da resistência
               estrutural.
             </>
           }
@@ -59,7 +59,7 @@ export function Prefabricadas() {
           <Reveal className="lg:col-span-7">
             <img
               src="/images/prefabricadas-processo.jpg"
-              alt="Madeira selecionada, tratada e numerada, ao lado de projeto técnico — o método por trás de cada casa pré-fabricada Evolution"
+              alt="Madeira selecionada ao lado de projeto técnico — o método por trás de cada casa pré-fabricada Evolution"
               loading="lazy"
               decoding="async"
               className="aspect-[4/3] w-full border border-cream/10 object-cover"
@@ -71,10 +71,10 @@ export function Prefabricadas() {
               <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
                 <div>
                   <span className="block font-display text-3xl font-light text-gold-bright">
-                    {yearsInBusiness} anos
+                    {founderExperienceYears} anos
                   </span>
                   <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-cream/55">
-                    de método comprovado
+                    de experiência em madeira
                   </span>
                 </div>
                 <div>

@@ -1,16 +1,24 @@
 interface TreeRingMotifProps {
-  /** Quantidade de anéis desenhados (10 anéis = 10 anos, na seção Sobre) */
+  /** Quantidade de anéis desenhados (ex.: 40 anéis = 40 anos de experiência, na seção Sobre) */
   rings?: number
   className?: string
   /** Espessura do traço em unidades do viewBox */
   strokeWidth?: number
 }
 
+const MIN_RADIUS = 4
+const MAX_RADIUS = 47
+const MIN_OPACITY = 0.08
+
 /**
  * Elemento de assinatura da marca: anéis de crescimento de árvore.
  * Os deslocamentos de centro são fixos (não aleatórios) para manter o desenho
  * estável entre renders e dar um leve caráter orgânico, como um tronco real.
- * Usado em apenas três pontos do site: número "10" (Sobre), divisores e fundo do formulário.
+ * Raio e opacidade escalam com a quantidade de anéis — o último anel sempre
+ * termina dentro do viewBox e nunca desaparece de opacidade, não importa se
+ * são 12 ou 40 (troncos mais "velhos" simplesmente ficam com anéis mais finos
+ * e próximos, como um tronco real).
+ * Usado em apenas três pontos do site: número de anos (Sobre), divisores e fundo do formulário.
  */
 export function TreeRingMotif({ rings = 10, className = '', strokeWidth = 0.6 }: TreeRingMotifProps) {
   // Deslocamentos cíclicos do núcleo — o anel cresce fora de centro, como na madeira
@@ -25,6 +33,8 @@ export function TreeRingMotif({ rings = 10, className = '', strokeWidth = 0.6 }:
     [1.0, -1.2],
   ]
 
+  const lastIndex = Math.max(rings - 1, 1)
+
   return (
     <svg
       viewBox="0 0 100 100"
@@ -35,8 +45,10 @@ export function TreeRingMotif({ rings = 10, className = '', strokeWidth = 0.6 }:
     >
       {Array.from({ length: rings }, (_, index) => {
         const [dx, dy] = offsets[index % offsets.length]
+        const progress = rings > 1 ? index / lastIndex : 0
         // Espaçamento levemente irregular entre os anéis
-        const radius = 4 + index * 4.6 + (index % 3) * 0.7
+        const radius = MIN_RADIUS + progress * (MAX_RADIUS - MIN_RADIUS) + (index % 3) * 0.4
+        const opacity = 1 - progress * (1 - MIN_OPACITY)
         return (
           <circle
             key={index}
@@ -45,7 +57,7 @@ export function TreeRingMotif({ rings = 10, className = '', strokeWidth = 0.6 }:
             r={radius}
             stroke="currentColor"
             strokeWidth={strokeWidth}
-            opacity={1 - index * 0.05}
+            opacity={opacity}
           />
         )
       })}

@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
-import { navLinks, site, whatsappLink } from '../../data/site'
+import { founderExperienceYears, navLinks, site, whatsappLink } from '../../data/site'
 import { models } from '../../data/models'
 import { trackWhatsAppClick } from '../../lib/analytics'
 
@@ -20,8 +20,9 @@ export function Footer() {
               />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
-              Casas em estilo colonial, contemporâneo e comercial. Uma década construindo em
-              madeira nobre em Bagé, no Rio Grande do Sul e no Uruguai.
+              Casas em estilo colonial, contemporâneo e comercial. {founderExperienceYears} anos
+              de experiência construindo em madeira nobre em Bagé, no Rio Grande do Sul e no
+              Uruguai.
             </p>
 
             <div className="mt-7 flex items-center gap-3">
