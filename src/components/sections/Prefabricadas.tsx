@@ -1,32 +1,34 @@
+import { ClipboardList, Hammer, Layers, PackageCheck, type LucideIcon } from 'lucide-react'
 import { Reveal } from '../ui/Reveal'
+import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
-import { site, whatsappLink, yearsInBusiness } from '../../data/site'
+import { whatsappLink, yearsInBusiness } from '../../data/site'
 import { trackWhatsAppClick } from '../../lib/analytics'
 
-const steps = [
+const steps: { icon: LucideIcon; step: string; title: string; description: string }[] = [
   {
+    icon: ClipboardList,
     step: 'Etapa 1',
     title: 'Projeto sob medida',
-    description:
-      'A planta nasce do terreno, da orientação solar e da rotina de quem vai morar — nunca de um catálogo fechado, replicado casa após casa.',
+    description: 'A planta nasce do terreno e da rotina de quem vai morar.',
   },
   {
+    icon: Layers,
     step: 'Etapa 2',
-    title: 'Corte e tratamento da madeira',
-    description:
-      'Peças cortadas, tratadas em autoclave e secas em galpão próprio, com controle de qualidade peça a peça antes de qualquer uma chegar à obra.',
+    title: 'Corte e tratamento',
+    description: 'Autoclave e secagem controlada em galpão próprio.',
   },
   {
+    icon: Hammer,
     step: 'Etapa 3',
-    title: 'Montagem por equipe própria',
-    description:
-      'Sem terceirização: a mesma equipe que corta e trata a madeira monta a estrutura, do alicerce ao último detalhe de acabamento.',
+    title: 'Montagem própria',
+    description: 'Do alicerce ao acabamento, sem terceirização.',
   },
   {
+    icon: PackageCheck,
     step: 'Etapa 4',
-    title: 'Entrega com garantia formal',
-    description:
-      'Cronograma cumprido em contrato e garantia sobre estrutura e tratamento — casa pronta para morar, não para reformar em dois anos.',
+    title: 'Entrega com garantia',
+    description: 'Cronograma em contrato e garantia formal.',
   },
 ]
 
@@ -40,42 +42,35 @@ export function Prefabricadas() {
   return (
     <section id="pre-fabricadas" className="relative overflow-hidden bg-charcoal py-24 lg:py-32">
       <div className="container-site">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
-          {/* Autoridade: reposiciona "pré-fabricada" como precisão, não como atalho */}
+        <SectionHeading
+          eyebrow="Casas Pré-Fabricadas de Madeira"
+          title="Pré-fabricada não é sinônimo de simples — é sinônimo de precisão."
+          description={
+            <>
+              No Brasil, o termo carrega fama de solução provisória. Na Evolution significa o
+              oposto: madeira cortada, tratada e numerada em galpão próprio antes de chegar ao
+              terreno — precisão que reduz o prazo de obra sem abrir mão da resistência
+              estrutural.
+            </>
+          }
+        />
+
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          <Reveal className="lg:col-span-7">
+            <img
+              src="/images/prefabricadas-processo.jpg"
+              alt="Madeira selecionada, tratada e numerada, ao lado de projeto técnico — o método por trás de cada casa pré-fabricada Evolution"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full border border-cream/10 object-cover"
+            />
+          </Reveal>
+
           <div className="lg:col-span-5">
-            <Reveal>
-              <p className="eyebrow">Casas Pré-Fabricadas de Madeira</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="mt-5 font-display text-3xl font-light leading-[1.15] tracking-tight text-cream sm:text-4xl lg:text-[2.9rem]">
-                Pré-fabricada não é sinônimo de simples — é sinônimo de precisão.
-              </h2>
-            </Reveal>
-
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-cream/70 sm:text-lg">
-              <Reveal delay={0.16}>
-                <p>
-                  No Brasil, &ldquo;casa pré-fabricada&rdquo; ainda carrega fama de solução
-                  provisória. Na Evolution, pré-fabricada significa o oposto: cada peça de madeira
-                  é cortada, tratada e numerada em galpão próprio, com precisão de milímetros,
-                  antes de chegar ao terreno — o que reduz o prazo de obra sem abrir mão do
-                  acabamento nem da resistência estrutural.
-                </p>
-              </Reveal>
-              <Reveal delay={0.22}>
-                <p>
-                  Desde {site.foundedYear}, é a única forma como construímos: projeto sob medida,
-                  engenharia própria e uma equipe que não terceiriza a montagem. O resultado são
-                  casas pré-fabricadas de madeira feitas para atravessar gerações — não
-                  construções de catálogo, produzidas em série para durar poucos anos.
-                </p>
-              </Reveal>
-            </div>
-
-            <Reveal delay={0.3}>
-              <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-gold/25 pt-8">
+            <Reveal delay={0.1}>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
                 <div>
-                  <span className="block font-display text-2xl font-light text-gold-bright">
+                  <span className="block font-display text-3xl font-light text-gold-bright">
                     {yearsInBusiness} anos
                   </span>
                   <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-cream/55">
@@ -83,7 +78,7 @@ export function Prefabricadas() {
                   </span>
                 </div>
                 <div>
-                  <span className="block font-display text-2xl font-light text-gold-bright">
+                  <span className="block font-display text-3xl font-light text-gold-bright">
                     100%
                   </span>
                   <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-cream/55">
@@ -93,7 +88,7 @@ export function Prefabricadas() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.36}>
+            <Reveal delay={0.18}>
               <div className="mt-9">
                 <Button
                   href={whatsappLink(
@@ -108,40 +103,34 @@ export function Prefabricadas() {
               </div>
             </Reveal>
           </div>
-
-          {/* Processo: mostra o rigor por trás do termo "pré-fabricada" */}
-          <div className="lg:col-span-7 lg:pl-8">
-            <ul className="relative">
-              <span
-                aria-hidden="true"
-                className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-gold/60 via-gold/35 to-transparent"
-              />
-
-              {steps.map((item, index) => (
-                <Reveal as="li" key={item.step} delay={index * 0.1}>
-                  <div className="relative flex gap-7 pb-12 pl-0 last:pb-0">
-                    <span className="relative mt-2.5 flex h-[15px] w-[15px] shrink-0 items-center justify-center">
-                      <span className="absolute inset-0 rounded-full border border-gold/60" />
-                      <span className="h-[5px] w-[5px] rounded-full bg-gold-bright" />
-                    </span>
-
-                    <div className="flex-1 border-b border-cream/10 pb-8 last:border-none">
-                      <p className="text-[0.68rem] uppercase tracking-[0.16em] text-gold">
-                        {item.step}
-                      </p>
-                      <h3 className="mt-3 font-display text-xl font-normal text-cream sm:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-cream/60 sm:text-base">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
         </div>
+
+        {/* Processo: mostra o rigor por trás do termo "pré-fabricada", em formato rápido de ler */}
+        <ul className="mt-16 grid gap-px overflow-hidden border border-cream/10 bg-cream/10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+          {steps.map((item, index) => {
+            const Icon = item.icon
+            return (
+              <Reveal as="li" key={item.step} delay={index * 0.08} className="bg-charcoal">
+                <div className="group h-full p-7 transition-colors duration-500 ease-soft hover:bg-charcoal-soft lg:p-8">
+                  <Icon
+                    size={24}
+                    strokeWidth={1.25}
+                    className="text-gold transition-colors duration-500 group-hover:text-gold-bright"
+                  />
+                  <p className="mt-5 text-[0.68rem] uppercase tracking-[0.16em] text-gold/80">
+                    {item.step}
+                  </p>
+                  <h3 className="mt-2 font-display text-lg font-normal text-cream">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-cream/60">
+                    {item.description}
+                  </p>
+                </div>
+              </Reveal>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )
