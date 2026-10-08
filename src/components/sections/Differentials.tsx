@@ -9,7 +9,7 @@ export function Differentials() {
         <SectionHeading
           eyebrow="Por que a Evolution"
           title="O que sustenta uma obra em madeira."
-          description="Não é o preço que define o resultado de uma casa de madeira — é a origem do material, o rigor do projeto e quem coloca a mão na estrutura."
+          description="Madeira selecionada, projeto pensado para o seu terreno e montagem por equipe própria. Conheça os compromissos que orientam cada obra da Evolution."
         />
 
         <ul className="mt-16 grid gap-px overflow-hidden border border-cream/10 bg-cream/10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">

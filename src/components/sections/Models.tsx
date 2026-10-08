@@ -23,7 +23,7 @@ export function Models({ onSelectModel }: ModelsProps) {
         <SectionHeading
           eyebrow="Especialidades"
           title="Três estilos, o mesmo rigor de execução."
-          description="Do traço clássico do colonial à arquitetura autoral do contemporâneo, até estruturas comerciais em madeira. Deslize pelas fotos de obras já entregues."
+          description="Casas coloniais, contemporâneas e construções comerciais para o seu projeto em Santa Catarina, no Rio Grande do Sul ou no Uruguai. Explore os estilos e veja fotos de obras já entregues pela Evolution."
         />
 
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-7">

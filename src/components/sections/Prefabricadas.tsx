@@ -44,13 +44,13 @@ export function Prefabricadas() {
       <div className="container-site">
         <SectionHeading
           eyebrow="Casas Pré-Fabricadas de Madeira"
-          title="Pré-fabricada não é sinônimo de simples — é sinônimo de precisão."
+          title="Sua casa pré-fabricada, com projeto sob medida."
           description={
             <>
-              No Brasil, o termo carrega fama de solução provisória. Na Evolution significa o
-              oposto: projeto sob medida e execução criteriosa, do corte da madeira ao último
-              detalhe — precisão que reduz o prazo de obra sem abrir mão da resistência
-              estrutural.
+              Em Santa Catarina, no Rio Grande do Sul ou no Uruguai, sua casa começa com um
+              projeto pensado para o terreno e para a sua rotina. A Evolution prepara cada
+              peça antes da montagem e executa a obra com equipe própria, do alicerce ao
+              acabamento.
             </>
           }
         />
@@ -98,7 +98,7 @@ export function Prefabricadas() {
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('prefabricadas')}
                 >
-                  Tire suas dúvidas sobre pré-fabricadas
+                  Planejar minha casa pré-fabricada
                 </Button>
               </div>
             </Reveal>

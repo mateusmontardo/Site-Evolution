@@ -19,13 +19,13 @@ export const differentials: Differential[] = [
     icon: Compass,
     title: 'Quatro décadas de experiência em madeira',
     description:
-      'Décadas dedicadas ao ofício, antes mesmo da Evolution existir — o mesmo rigor em cada obra entregue no Rio Grande do Sul e no Uruguai.',
+      'Décadas dedicadas à construção em madeira, antes mesmo da Evolution existir. Experiência que orienta o projeto, a escolha dos materiais e a execução da sua obra.',
   },
   {
     icon: Globe2,
-    title: 'Atendimento binacional',
+    title: 'Santa Catarina, RS e Uruguai',
     description:
-      'Brasil e Uruguai, com logística, documentação e equipe preparadas para obra dos dois lados da fronteira.',
+      'Atendimento em Santa Catarina, Rio Grande do Sul e Uruguai, com equipe própria e logística planejada conforme a localização da obra.',
   },
   {
     icon: TreePine,

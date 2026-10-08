@@ -20,9 +20,9 @@ export function Footer() {
               />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
-              Casas em estilo colonial, contemporâneo e comercial. {founderExperienceYears} anos
-              de experiência construindo em madeira nobre em Bagé, no Rio Grande do Sul e no
-              Uruguai.
+              Casas de madeira sob medida e pré-fabricadas nos estilos colonial, contemporâneo
+              e comercial. Atendimento em Santa Catarina, Rio Grande do Sul e Uruguai, com
+              {' '}{founderExperienceYears} anos de experiência em construção em madeira.
             </p>
 
             <div className="mt-7 flex items-center gap-3">
@@ -109,6 +109,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <span>
+                  Sede em Bagé/RS
+                  <br />
                   {site.address.street} — {site.address.district}
                   <br />
                   {site.address.city}/{site.address.state} · {site.address.zip}
@@ -123,7 +125,7 @@ export function Footer() {
             © {year} {site.fullName}. Todos os direitos reservados.
           </p>
           <p>
-            Bagé · Rio Grande do Sul · Uruguai
+            Santa Catarina · Rio Grande do Sul · Uruguai
           </p>
         </div>
       </div>

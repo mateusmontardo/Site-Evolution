@@ -16,7 +16,7 @@ const contactSchema = z.object({
     .trim()
     .min(10, 'Informe um WhatsApp com DDD.')
     .regex(/^[\d\s()+-]+$/, 'Use apenas números, espaços e os sinais ( ) + -.'),
-  city: z.string().trim().min(2, 'Informe a cidade da obra.'),
+  city: z.string().trim().min(2, 'Informe a cidade e o estado ou país da obra.'),
   interest: z.string().min(1, 'Selecione o tipo de projeto.'),
   message: z.string().trim().min(10, 'Conte um pouco mais sobre o projeto (mínimo 10 caracteres).'),
 })
@@ -65,7 +65,7 @@ export function Contact({ presetInterest }: ContactProps) {
       '',
       `Nome: ${data.name}`,
       `WhatsApp: ${data.phone}`,
-      `Cidade: ${data.city}`,
+      `Local da obra (cidade e estado/país): ${data.city}`,
       `Tipo de projeto: ${modelName}`,
       '',
       `Mensagem: ${data.message}`,
@@ -112,13 +112,15 @@ export function Contact({ presetInterest }: ContactProps) {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-3xl font-light leading-[1.15] tracking-tight text-cream sm:text-4xl lg:text-[2.9rem]">
-                Comece pela conversa.
+                Vamos planejar sua casa de madeira?
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 text-base leading-relaxed text-cream/70">
-                Conte onde fica o terreno, que tipo de construção você imagina e em que prazo. A
-                partir daí montamos o estudo inicial e a estimativa de investimento.
+                Quer construir em Santa Catarina, no Rio Grande do Sul ou no Uruguai? Conte a
+                cidade da obra, o tipo de construção e o prazo que tem em mente. A partir
+                dessas informações, conversamos sobre o estudo inicial e a estimativa de
+                investimento.
               </p>
             </Reveal>
 
@@ -158,7 +160,7 @@ export function Contact({ presetInterest }: ContactProps) {
                   </span>
                   <span>
                     <span className="block text-[0.68rem] uppercase tracking-[0.16em] text-cream/45">
-                      Endereço
+                      Sede em Bagé/RS
                     </span>
                     <span className="mt-1.5 block text-base leading-relaxed text-cream/85">
                       {site.address.street} — {site.address.district}
@@ -225,12 +227,12 @@ export function Contact({ presetInterest }: ContactProps) {
                     />
                   </Field>
 
-                  <Field label="Cidade da obra" htmlFor="city" error={errors.city?.message}>
+                  <Field label="Cidade e estado / país da obra" htmlFor="city" error={errors.city?.message}>
                     <input
                       id="city"
                       type="text"
                       autoComplete="address-level2"
-                      placeholder="Ex.: Bagé, RS"
+                      placeholder="Ex.: Florianópolis, SC"
                       aria-invalid={!!errors.city}
                       className={fieldClasses}
                       {...register('city')}
@@ -276,7 +278,7 @@ export function Contact({ presetInterest }: ContactProps) {
                   disabled={isSubmitting}
                   className="mt-8 inline-flex w-full items-center justify-center gap-2.5 bg-gold px-8 py-4 font-sans text-[0.95rem] font-medium tracking-wide text-ink transition-all duration-300 ease-soft hover:bg-gold-bright hover:shadow-[0_8px_30px_-12px_rgba(217,183,106,0.6)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                 >
-                  Enviar mensagem
+                  Solicitar orçamento pelo WhatsApp
                   <Send size={16} strokeWidth={1.75} />
                 </button>
 

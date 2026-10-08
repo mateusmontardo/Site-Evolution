@@ -14,9 +14,9 @@ const values = [
       'Do estudo de implantação ao detalhe de esquadria, o desenho responde ao terreno e a quem vai morar.',
   },
   {
-    title: 'Atendimento binacional',
+    title: 'Atendimento em SC, RS e Uruguai',
     description:
-      'Obras no Brasil e no Uruguai, com a mesma equipe, o mesmo padrão e domínio da logística de fronteira.',
+      'Atendimento em Santa Catarina, Rio Grande do Sul e Uruguai, com equipe própria e planejamento da logística de cada obra.',
   },
   {
     title: 'Garantia formal',
@@ -59,7 +59,7 @@ export function About() {
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-3xl font-light leading-[1.15] tracking-tight text-cream sm:text-4xl lg:text-[2.9rem]">
                 Nascida em Bagé, construindo
-                <br className="hidden sm:block" /> dos pampas ao Uruguai.
+                <br className="hidden sm:block" /> também em Santa Catarina.
               </h2>
             </Reveal>
 
@@ -74,10 +74,10 @@ export function About() {
               </Reveal>
               <Reveal delay={0.2}>
                 <p>
-                  O que era atendimento regional acompanhou os clientes — da serra gaúcha ao litoral,
-                  do campo à fronteira. Hoje a empresa executa projetos em todo o Rio Grande do Sul e
-                  no Uruguai, com estrutura própria para conduzir obra dos dois lados da linha
-                  divisória.
+                  Com sede em Bagé/RS, a Evolution atende também Santa Catarina, além do Rio Grande
+                  do Sul e do Uruguai. Cada projeto recebe planejamento próprio para o terreno,
+                  a logística e a montagem, com a mesma atenção à escolha da madeira e ao
+                  acabamento.
                 </p>
               </Reveal>
               <Reveal delay={0.26}>

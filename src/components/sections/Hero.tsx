@@ -74,7 +74,7 @@ export function Hero() {
 
       <div className="container-site relative z-10 pb-20 pt-32 sm:pb-24 lg:pb-28">
         <motion.p className="eyebrow" {...fadeUp(0.1)}>
-          {founderExperienceYears} anos de experiência · Rio Grande do Sul e Uruguai
+          Santa Catarina · Rio Grande do Sul · Uruguai
         </motion.p>
 
         <motion.h1
@@ -90,21 +90,22 @@ export function Hero() {
           className="mt-8 max-w-xl text-base leading-relaxed text-cream/75 sm:text-lg"
           {...fadeUp(0.32)}
         >
-          Casas em estilo colonial, contemporâneo e comercial, em madeira nobre — desenhadas sob
-          medida e executadas por equipe própria em Bagé, em todo o Rio Grande do Sul e no Uruguai.
+          Casas de madeira sob medida e pré-fabricadas nos estilos colonial, contemporâneo e
+          comercial. Atendimento em Santa Catarina, Rio Grande do Sul e Uruguai, com execução
+          por equipe própria.
         </motion.p>
 
         <motion.div className="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center" {...fadeUp(0.44)}>
           <Button
             href={whatsappLink(
-              'Olá! Vim pelo site da Evolution e gostaria de agendar uma conversa sobre meu projeto.',
+              'Olá! Vim pelo site da Evolution e gostaria de solicitar um orçamento para uma casa de madeira. Posso informar a cidade e os detalhes do projeto?',
             )}
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
             onClick={() => trackWhatsAppClick('hero')}
           >
-            Agende uma conversa
+            Solicitar orçamento
           </Button>
           <Button href="#modelos" variant="outline" size="lg">
             Conheça os modelos

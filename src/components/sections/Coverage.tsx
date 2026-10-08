@@ -5,6 +5,11 @@ import { trackWhatsAppClick } from '../../lib/analytics'
 
 const areas = [
   {
+    name: 'Santa Catarina',
+    role: 'Projetos residenciais e comerciais',
+    description: 'Casas de madeira sob medida e pré-fabricadas para quem quer construir no estado.',
+  },
+  {
     name: 'Bagé',
     role: 'Sede e origem',
     description: 'Escritório, equipe e centro de operações desde 2016.',
@@ -32,28 +37,29 @@ export function Coverage() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-3xl font-light leading-[1.15] tracking-tight text-cream sm:text-4xl lg:text-[2.9rem]">
-                Dos pampas à fronteira — e além dela.
+                Seu projeto em Santa Catarina começa aqui.
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 text-base leading-relaxed text-cream/70 sm:text-lg">
-                Poucas construtoras do setor operam nos dois países. A Evolution atende Bagé, todo o
-                Rio Grande do Sul e o Uruguai com a mesma equipe e o mesmo padrão de execução —
-                incluindo o que a maioria evita: a burocracia de obra transfronteiriça.
+                A Evolution atende Santa Catarina, Rio Grande do Sul e Uruguai. Com sede em Bagé/RS,
+                levamos nossa equipe e nosso padrão de execução até a sua obra. Informe a cidade
+                e as características do terreno para conversarmos sobre o projeto, a logística
+                e os prazos.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
               <div className="mt-9">
                 <Button
                   href={whatsappLink(
-                    'Olá! Gostaria de saber se a Evolution atende a minha região.',
+                    'Olá! Vi que a Evolution atende Santa Catarina, Rio Grande do Sul e Uruguai. Gostaria de conversar sobre um projeto na minha cidade.',
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
                   onClick={() => trackWhatsAppClick('coverage')}
                 >
-                  Consultar atendimento na minha região
+                  Conversar sobre minha obra
                 </Button>
               </div>
             </Reveal>
@@ -63,7 +69,7 @@ export function Coverage() {
               sem simular geografia real */}
           <div className="lg:col-span-7 lg:pl-8">
             <ul className="relative">
-              {/* Fio vertical que conecta os três pontos */}
+              {/* Fio vertical que conecta as áreas de atuação */}
               <span
                 aria-hidden="true"
                 className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-gold/60 via-gold/35 to-transparent"
