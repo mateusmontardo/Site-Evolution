@@ -11,8 +11,8 @@ export const site = {
   city: 'Bagé',
   state: 'RS',
   /** Número no formato internacional, apenas dígitos — usado nos links wa.me */
-  whatsappNumber: '5553999028225',
-  whatsappDisplay: '(53) 99902-8225',
+  whatsappNumber: '5553999616728',
+  whatsappDisplay: '(53) 99961-6728',
   email: 'contato@evolutioncasasdemadeira.com.br',
   address: {
     street: 'Rua Dezenove de Abril, 3074',
